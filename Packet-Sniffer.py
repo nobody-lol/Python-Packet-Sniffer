@@ -3,7 +3,7 @@ import textwrap
 import socket
 
 def main():
-    connection = socket.socket(socket.AF_PACKET, socket.SOCKET_RAW, socket.ntohs(3))
+    connection = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_IP)
 
     while True:
         rawData, address = connection.recvfrom(65535)
