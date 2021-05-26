@@ -127,13 +127,13 @@ def tcpHeader(newPacket):
     urgPntr = packet[7]
 
     print ("*******************TCP***********************")
-    print ("\tSource Port: "+str(srcPort) )
-    print ("\tDestination Port: "+str(dstPort) )
-    print ("\tSequence Number: "+str(sqncNum) )
-    print ("\tAck. Number: "+str(acknNum) )
-    print ("\tData Offset: "+str(dataOffset) )
-    print ("\tReserved: "+str(reserved) )
-    print ("\tTCP Flags: "+str(tcpFlags) )
+    print ("\tSource Port: "+bytes(srcPort) )
+    print ("\tDestination Port: "+bytes(dstPort) )
+    print ("\tSequence Number: "+bytes(sqncNum) )
+    print ("\tAck. Number: "+bytes(acknNum) )
+    print ("\tData Offset: "+bytes(dataOffset) )
+    print ("\tReserved: "+bytes(reserved) )
+    print ("\tTCP Flags: "+bytes(tcpFlags) )
 
     if(urgFlag == 32):
         print ("\tUrgent Flag: Set")
@@ -148,9 +148,9 @@ def tcpHeader(newPacket):
     if(finFlag == True):
         print ("\tFin Flag: Set")
 
-    print ("\tWindow: "+str(window))
-    print ("\tChecksum: "+str(checkSum))
-    print ("\tUrgent Pointer: "+str(urgPntr))
+    print ("\tWindow: "+bytes(window))
+    print ("\tChecksum: "+bytes(checkSum))
+    print ("\tUrgent Pointer: "+bytes(urgPntr))
     print (" ")
 
     packet = packet[20:]
@@ -165,10 +165,10 @@ def udpHeader(newPacket):
     checkSum = packet[3]
 
     print ("*******************UDP***********************")
-    print ("\tSource Port: "+str(srcPort))
-    print ("\tDestination Port: "+str(dstPort))
-    print ("\tLenght: "+str(lenght))
-    print ("\tChecksum: "+str(checkSum))
+    print ("\tSource Port: "+bytes(srcPort))
+    print ("\tDestination Port: "+bytes(dstPort))
+    print ("\tLenght: "+bytes(lenght))
+    print ("\tChecksum: "+bytes(checkSum))
     print (" ")
 
     packet = packet[8:]
